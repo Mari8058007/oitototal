@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendas",
+  "info": {
+    "name": "venda",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "produto": {
+      "type": "string"
+    },
+    "cliente": {
+      "type": "string"
+    },
+    "valorTotal": {
+      "type": "decimal"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "cliente"
+    },
+    "formaPagamento": {
+      "type": "string"
+    },
+    "produtos": {
+      "via": "vendas",
+      "collection": "produto"
+    },
+    "clientes": {
+      "via": "vendas",
+      "collection": "cliente"
+    }
+  }
+}

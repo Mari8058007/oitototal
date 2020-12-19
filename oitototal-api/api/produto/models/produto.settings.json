@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "name": "produto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "descricao": {
+      "type": "string"
+    },
+    "quantidade": {
+      "type": "integer"
+    },
+    "valor": {
+      "type": "decimal"
+    },
+    "nome": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome"
+    },
+    "categoria": {
+      "model": "categoria",
+      "via": "produtos"
+    },
+    "vendas": {
+      "collection": "venda",
+      "via": "produtos",
+      "dominant": true
+    }
+  }
+}
